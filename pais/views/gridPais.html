@@ -19,7 +19,6 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th><a ng-click="app.orderColuna = 'idPais'; app.orderReverse = !app.orderReverse ">#</a></th>
 								<th><a ng-click="app.orderColuna = 'nome'; app.orderReverse = !app.orderReverse ">País</a></th>
 								<th><a ng-click="app.orderColuna = 'sigla'; app.orderReverse = !app.orderReverse ">Sigla</a></th>
 								<th><a ng-click="app.orderColuna = 'ddi'; app.orderReverse = !app.orderReverse ">DDI</a></th>
@@ -28,7 +27,6 @@
 						</thead>
 						<tbody>
 							<tr ng-repeat="pais in paises | filter: app.busca | orderBy:app.orderColuna:app.orderReverse">
-								<td>{{pais.idPais}}</td>
 								<td>{{pais.nome}}</td>
 								<td>{{pais.sigla}}</td>
 								<td>{{pais.ddi}}</td>

@@ -23,8 +23,8 @@ angular.module('time02', ['restangular', 'ngRoute']).
       
 
       //Configurações do RestAngular
-      RestangularProvider.setBaseUrl('https://api.mongolab.com/api/1/databases/angularjs/collections');
-      RestangularProvider.setDefaultRequestParams({ apiKey: '4f847ad3e4b08a2eed5f3b54' })
+      RestangularProvider.setBaseUrl('https://api.mongolab.com/api/1/databases/escoladeti/collections');
+      RestangularProvider.setDefaultRequestParams({ apiKey: 'JaNJ-CH7-P_NPvPnGAqoVtZYrySEzFq0' })
       RestangularProvider.setRestangularFields({
         id: '_id.$oid'
       });
