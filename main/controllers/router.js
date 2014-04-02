@@ -20,6 +20,8 @@ angular.module('time02', ['restangular', 'ngRoute']).
         templateUrl:'./pais/views/formPais.html'
       }).
       otherwise({redirectTo:'/'});
+
+      //Retirar o '#' da URL
       $locationProvider.html5Mode(true);
       
 
@@ -28,8 +30,7 @@ angular.module('time02', ['restangular', 'ngRoute']).
       RestangularProvider.setDefaultRequestParams({ apiKey: 'JaNJ-CH7-P_NPvPnGAqoVtZYrySEzFq0' })
       RestangularProvider.setRestangularFields({
         id: '_id.$oid'
-      });
-      
+      });      
       RestangularProvider.setRequestInterceptor(function(elem, operation, what) {
         if (operation === 'put') {
           elem._id = undefined;
