@@ -15,8 +15,8 @@ angular.module('time02', ['restangular', 'ngRoute']).
           }
         }
       }).
-      when('/new', {
-        //controller:CriarPaisCtrl, 
+      when('/pais/cadastrar', {
+        //controller:CadastrarPaisCtrl, 
         templateUrl:'./pais/views/formPais.html'
       }).
       otherwise({redirectTo:'/'});
