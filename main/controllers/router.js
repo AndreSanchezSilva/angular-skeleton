@@ -1,5 +1,5 @@
 angular.module('time02', ['restangular', 'ngRoute']).
-  config(function($routeProvider, RestangularProvider) {
+  config(function($routeProvider, $locationProvider, RestangularProvider) {
     //Configurações do Roteador
     $routeProvider.
       when('/pais', {
@@ -7,19 +7,20 @@ angular.module('time02', ['restangular', 'ngRoute']).
         templateUrl:'./pais/views/gridPais.html'
       }).
       when('/pais/editar/:idPais', {
-        //controller:EditarPaisCtrl, 
+        controller:EditarPaisCtrl, 
         templateUrl:'./pais/views/formPais.html',
         resolve: {
           pais: function(Restangular, $route){
-            //return Restangular.one('projects', $route.current.params.idPais).get();
+            return Restangular.one('pais', $route.current.params.idPais).get();
           }
         }
       }).
       when('/pais/cadastrar', {
-        //controller:CadastrarPaisCtrl, 
+        controller:CadastrarPaisCtrl, 
         templateUrl:'./pais/views/formPais.html'
       }).
       otherwise({redirectTo:'/'});
+      $locationProvider.html5Mode(true);
       
 
       //Configurações do RestAngular
@@ -30,7 +31,6 @@ angular.module('time02', ['restangular', 'ngRoute']).
       });
       
       RestangularProvider.setRequestInterceptor(function(elem, operation, what) {
-        
         if (operation === 'put') {
           elem._id = undefined;
           return elem;

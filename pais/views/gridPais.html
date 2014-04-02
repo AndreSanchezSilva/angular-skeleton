@@ -10,7 +10,7 @@
 				<input class="form-control" ng-model="app.busca" type="search" placeholder="Buscar">
 			</div>					
 			<div class="col-md-2 col-md-offset-1">
-				<a class="btn btn-{{!app.showForm && 'info' || 'danger'}} pull-right" ng-click="app.showForm = !app.showForm; formPais = {}; ">{{!app.showForm && 'Cadastrar um País' || 'Cancelar'}}</a>
+				<a href="pais/cadastrar" class="btn btn-info pull-right">Cadastrar um País</a>
 			</div>
 		</div><!--/row-->
 		<div class="row">
@@ -22,7 +22,7 @@
 								<th><a ng-click="app.orderColuna = 'nome'; app.orderReverse = !app.orderReverse ">País</a></th>
 								<th><a ng-click="app.orderColuna = 'sigla'; app.orderReverse = !app.orderReverse ">Sigla</a></th>
 								<th><a ng-click="app.orderColuna = 'ddi'; app.orderReverse = !app.orderReverse ">DDI</a></th>
-								<th width="80px"></th>
+								<th width="100px"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -31,10 +31,10 @@
 								<td>{{pais.sigla}}</td>
 								<td>{{pais.ddi}}</td>
 								<td >
-									<a ng-click="editarPais(pais);" class="btn btn-xs btn-warning">
+									<a href="pais/editar/{{pais._id.$oid}}" class="btn btn-sm btn-warning">
 										<i class="glyphicon glyphicon-pencil"></i>
 									</a>
-									<a ng-click="deletarPais(pais)" class="btn btn-xs btn-danger">
+									<a ng-click="removerPais(pais)" class="btn btn-sm btn-danger">
 										<i class="glyphicon glyphicon-remove"></i>
 									</a>
 								</td>
