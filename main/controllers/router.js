@@ -2,22 +2,56 @@ angular.module('time02', ['restangular', 'ngRoute']).
   config(function($routeProvider, $locationProvider, RestangularProvider) {
     //Configurações do Roteador
     $routeProvider.
-      when('/pais', {
-        controller:ListarPaisCtrl, 
-        templateUrl:'./pais/views/gridPais.html'
+      when('/endereco/pais', {
+        templateUrl:'./pais/views/gridPais.html',
+        controller:ListarPaisCtrl
       }).
-      when('/pais/editar/:idPais', {
-        controller:EditarPaisCtrl, 
+      when('/endereco/pais/cadastrar', {
         templateUrl:'./pais/views/formPais.html',
+        controller:CadastrarPaisCtrl
+      }).
+      when('/endereco/pais/editar/:idPais', {
+        templateUrl:'./pais/views/formPais.html',
+        controller:EditarPaisCtrl, 
         resolve: {
           pais: function(Restangular, $route){
             return Restangular.one('pais', $route.current.params.idPais).get();
           }
         }
       }).
-      when('/pais/cadastrar', {
-        controller:CadastrarPaisCtrl, 
-        templateUrl:'./pais/views/formPais.html'
+      when('/endereco/uf', {
+        templateUrl:'./uf/views/gridUf.html',
+        //controller:CadastrarPaisCtrl
+      }).
+      when('/endereco/uf/cadastrar', {
+        templateUrl:'./uf/views/formUf.html',
+        //controller:CadastrarPaisCtrl 
+      }).
+      when('/endereco/uf/editar/:idUf', {
+        templateUrl:'./uf/views/formUf.html',
+        /*controller:CadastrarPaisCtrl,
+        resolve: {
+          pais: function(Restangular, $route){
+            return Restangular.one('pais', $route.current.params.idPais).get();
+          }
+        }*/
+      }).
+      when('/endereco/cidade', {
+        templateUrl:'./cidade/views/gridCidadeDistrito.html',
+        //controller:CadastrarPaisCtrl
+      }).
+      when('/endereco/cidade/cadastrar', {
+        templateUrl:'./cidade/views/formCidadeDistrito.html',
+        //controller:CadastrarPaisCtrl 
+      }).
+      when('/endereco/cidade/editar/:idcidade', {
+        templateUrl:'./cidade/views/formCidadeDistrito.html',
+        /*controller:CadastrarPaisCtrl,
+        resolve: {
+          pais: function(Restangular, $route){
+            return Restangular.one('pais', $route.current.params.idPais).get();
+          }
+        }*/
       }).
       otherwise({redirectTo:'/'});
 

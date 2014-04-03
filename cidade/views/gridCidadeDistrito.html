@@ -1,0 +1,109 @@
+<!--Início do conteúdo da Grid-->
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="center">Lista de Cidades</h2>
+      </div>
+    </div><!--/row-->
+    <div class="row">
+      <div class="col-md-5 col-md-offset-2 form-group">
+        <input class="form-control" ng-model="app.busca" type="search" placeholder="Buscar">
+      </div>          
+      <div class="col-md-2 col-md-offset-1">
+        <a href="endereco/cidade/cadastrar" class="btn btn-info pull-right">Cadastrar de Cidades</a>
+      </div>
+   
+      <div class="row">
+        <div class="col-md-4 col-md-offset-2 form-group">
+          <label class="checkbox">
+           <input class="checkbox" type="checkbox" value="distrito">
+            Cidade
+          </label>
+       </div>
+       <div class="col-md-4  form-group">
+          <label class="checkbox">
+           <input class="checkbox" type="checkbox" value="distrito">
+            Distrito
+          </label>
+       </div>
+      </div>
+     </div><!--/row-->
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><a>#</a></th>
+                <th><a>Cidade/Dist</a></th>
+                <th><a>Sigla</a></th>
+                <th><a>Cidade Pertenc.</a></th>
+                <th><a>DDD</a></th>
+                <th><a>Data Fund.</a></th>
+                <th><a>Data Ini.Vigenc.</a></th>
+                <th><a>Data Fin.Vigenc.</a></th>
+                <th width="100px"></th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Maringa</td>
+                <td>MGA</td>
+                <td></td>
+                <td>44</td>
+                <td>01/01/1950</td>
+                <td></td>
+                <td></td>
+                <td >
+                  <a href="cidade/editar/" class="btn btn-sm btn-warning">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </a>
+                  <a class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-remove"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Londrina</td>
+                <td>LON</td>
+                <td></td>
+                <td>43</td>
+                <td>03/05/1952</td>
+                <td></td>
+                <td></td>
+                <td >
+                  <a href="cidade/editar/" class="btn btn-sm btn-warning">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </a>
+                  <a class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-remove"></i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Iguatemi</td>
+                <td>IGM</td>
+                <td>MARINGA</td>
+                <td>44</td>
+                <td>03/05/1965</td>
+                <td>03/05/1966</td>
+                <td></td>
+                <td >
+                  <a href="cidade/editar/" class="btn btn-sm btn-warning">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </a>
+                  <a class="btn btn-sm btn-danger">
+                    <i class="glyphicon glyphicon-remove"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>                
+          </table>
+        </div><!--/responsive-table-->
+      </div>    
+    </div><!--/row-->
+  </div>
+</div><!--/row--> 
+<!--Fim do conteúdo da Grid-->

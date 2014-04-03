@@ -41,17 +41,23 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="{{menuActive('home')}}"><a href="./home">Inicio</a></li>
-            <li class="{{menuActive('pessoa')}}"><a href="./pessoa">Pessoa</a></li>
-            <li><a href="./usuario">Usuário</a></li>
+            <li><a href="./home">Inicio</a></li>
+            <li><a href="./pessoa">Pessoa</a></li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Acesso <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="./acesso/usuario">Usuário</a></li>
+                <li><a href="./acesso/perfildeacesso">Perfil de Acesso</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="" class="dropdown-toggle" data-toggle="dropdown">Endereço <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="./logradouro">Logradouro</a></li>
-                <li><a href="./bairro">Bairro</a></li>
-                <li><a href="./cidade">Cidade</a></li>
-                <li><a href="./uf">Unidade Federativa</a></li>
-                <li><a href="./pais">Pais</a></li>
+                <li><a href="./endereco/logradouro">Logradouro</a></li>
+                <li><a href="./endereco/bairro">Bairro</a></li>
+                <li><a href="./endereco/cidade">Cidade</a></li>
+                <li><a href="./endereco/uf">Unidade Federativa</a></li>
+                <li><a href="./endereco/pais">Pais</a></li>
               </ul>
             </li>
           </ul>

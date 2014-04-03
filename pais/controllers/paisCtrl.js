@@ -26,7 +26,7 @@ function EditarPaisCtrl($scope, $location, Restangular, pais){
 
 	$scope.salvarPais = function() {
 		$scope.pais.put().then(function() {
-			$location.path('/pais');
+			$location.path('/endereco/pais');
 		});
 	};
 
@@ -35,7 +35,7 @@ function EditarPaisCtrl($scope, $location, Restangular, pais){
 function CadastrarPaisCtrl($scope, $location, Restangular) {
 	$scope.salvarPais = function() {
 		Restangular.all('pais').post($scope.pais).then(function(pais) {
-			$location.path('/pais');
+			$location.path('/endereco/pais');
 		});
 	}
 }
