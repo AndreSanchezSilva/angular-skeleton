@@ -1,18 +1,18 @@
-angular.module('time02', ['restangular', 'ngRoute']).
+angular.module('time02', ['restangular', 'ngRoute', 'Pais', 'Cidade']).
   config(function($routeProvider, $locationProvider, RestangularProvider) {
     //Configurações do Roteador
     $routeProvider.
       when('/endereco/pais', {
         templateUrl:'./pais/views/gridPais.html',
-        controller:ListarPaisCtrl
+       controller:'ListarPaisCtrl'
       }).
       when('/endereco/pais/cadastrar', {
         templateUrl:'./pais/views/formPais.html',
-        controller:CadastrarPaisCtrl
+        controller:'CadastrarPaisCtrl'
       }).
       when('/endereco/pais/editar/:idPais', {
         templateUrl:'./pais/views/formPais.html',
-        controller:EditarPaisCtrl, 
+        controller:'EditarPaisCtrl', 
         resolve: {
           pais: function(Restangular, $route){
             return Restangular.one('pais', $route.current.params.idPais).get();
@@ -38,20 +38,20 @@ angular.module('time02', ['restangular', 'ngRoute']).
       }).
       when('/endereco/cidade', {
         templateUrl:'./cidade/views/gridCidadeDistrito.html',
-        //controller:CadastrarPaisCtrl
+        controller:'ListarCidadeCtrl'
       }).
       when('/endereco/cidade/cadastrar', {
         templateUrl:'./cidade/views/formCidadeDistrito.html',
-        //controller:CadastrarPaisCtrl 
+        controller:'CadastrarCidadeCtrl'
       }).
       when('/endereco/cidade/editar/:idcidade', {
         templateUrl:'./cidade/views/formCidadeDistrito.html',
-        /*controller:CadastrarPaisCtrl,
+        controller:'EditarCidadeCtrl',
         resolve: {
           pais: function(Restangular, $route){
             return Restangular.one('pais', $route.current.params.idPais).get();
           }
-        }*/
+        }
       }).
       otherwise({redirectTo:'/'});
 

@@ -11,13 +11,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="./lib/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="./lib/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Sb-Admin theme -->
+    <link href="./lib/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="./lib/fonts/font-awesome/css/font-awesome.min.css">
 
     <style type="text/css">
-      body{
-        padding-top: 80px;
-      }
       .center {
         text-align: center;
       }
@@ -26,49 +24,61 @@
   </head>
 
   <body role="document"  ng-init="init()">
+    <div id="wrapper">
 
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Menu</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Escola de TI - Time 02</a>
+          <a class="navbar-brand" href="index.html">Escola de TI - Time 02</a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="./home">Inicio</a></li>
-            <li><a href="./pessoa">Pessoa</a></li>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li><a href="./pessoa"><i class="fa fa-user"></i> Pessoa</a></li>
             <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Acesso <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="./acesso/usuario">Usuário</a></li>
-                <li><a href="./acesso/perfildeacesso">Perfil de Acesso</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="" class="dropdown-toggle" data-toggle="dropdown">Endereço <b class="caret"></b></a>
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-map-marker"></i> Endereço <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="./endereco/logradouro">Logradouro</a></li>
                 <li><a href="./endereco/bairro">Bairro</a></li>
                 <li><a href="./endereco/cidade">Cidade</a></li>
                 <li><a href="./endereco/uf">Unidade Federativa</a></li>
-                <li><a href="./endereco/pais">Pais</a></li>
+                <li><a href="./endereco/pais">País</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-gear"></i> Acesso <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="./acesso/usuario">Usuário</a></li>
+                <li><a href="#">Perfil de Acesso</a></li>
               </ul>
             </li>
           </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
 
-    <div class="container" role="main" ng-view>
+          <ul class="nav navbar-nav navbar-right navbar-user">
+            <li class="dropdown user-dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> José da Silva <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-power-off"></i> Sair</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
 
-    </div> <!-- /container -->
+      <div id="page-wrapper" role="main" ng-view>
 
+
+      </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+    
 
     <!-- Arquivos JavaScript -->
       <script src="./lib/js/jquery-1.11.0.min.js"></script>
@@ -79,6 +89,7 @@
       <script src="./lib/js/restangular.min.js"></script>
       <script src="./main/controllers/router.js"></script>
       <script src="./pais/controllers/paisCtrl.js"></script>
+      <script src="./cidade/controllers/cidadeCtrl.js"></script>
       <script type="text/javascript">
         //angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
 

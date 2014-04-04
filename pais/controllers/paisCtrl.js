@@ -1,23 +1,28 @@
-function ListarPaisCtrl($scope, $location, Restangular) {
-//Acessa o servidor RestFull e recupera toda listagem de paises.
-//$scope.paises = Restangular.all('pais').getList().$object;
-Restangular.all('pais').getList().then(function(paises) {
-	$scope.paises = paises;
+angular.module('Pais', []).controller('ListarPaisCtrl', function($scope,  $rootScope, $location, Restangular) {
+	//Acessa o servidor RestFull e recupera toda listagem de paises.
+	//$scope.paises = Restangular.all('pais').getList().$object;
+	Restangular.all('pais').getList().then(function(paises) {
+		$scope.paises = paises;
 
-	//Debug
-	console.log($scope.paises);
-});
+		//Debug
+		console.log($scope.paises);
+	});
 
 	$scope.removerPais = function(pais){
 		if (confirm('Desejar deletar o pais '+pais.nome+' ?')) {
 			pais.remove().then(function() {
-				$scope.paises = Restangular.all("pais").getList().$object;
+				Restangular.all('pais').getList().then(function(paises) {
+					$scope.paises = paises;
+
+					//Debug
+					console.log($scope.paises);
+				});
 			});
 		}
 	}
-}
+});
 
-function EditarPaisCtrl($scope, $location, Restangular, pais){
+angular.module('Pais').controller('EditarPaisCtrl', function($scope, $rootScope, $location, Restangular, pais){
 	//Debug
 	console.log(pais);
 
@@ -30,12 +35,12 @@ function EditarPaisCtrl($scope, $location, Restangular, pais){
 		});
 	};
 
-}
+});
 
-function CadastrarPaisCtrl($scope, $location, Restangular) {
+angular.module('Pais').controller('CadastrarPaisCtrl', function($scope, $location, Restangular) {
 	$scope.salvarPais = function() {
 		Restangular.all('pais').post($scope.pais).then(function(pais) {
 			$location.path('/endereco/pais');
 		});
 	}
-}
+});
